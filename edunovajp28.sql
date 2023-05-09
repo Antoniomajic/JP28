@@ -46,3 +46,12 @@ create table clan(
 	grupa int not null,
 	polaznik int not null
 );
+
+alter table grupa add foreign key (smjer) references smjer(sifra);
+alter table grupa add foreign key (predavac) references predavac (sifra);
+alter table predavac add foreign key (osoba) references osoba (sifra);
+alter table polaznik add foreign key (osoba) references osoba (sifra);
+alter table clan add foreign key (polaznik) references polaznik (sifra);
+alter table clan add foreign key (grupa) references grupa (sifra);
+
+
