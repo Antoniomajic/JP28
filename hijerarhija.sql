@@ -10,4 +10,4 @@ create table zaposlenik(
 	nadredeni int 
 );
 
-alter table zaposlenik add foreign key (nadredeni) references zaposlenik (nadredeni);
+alter table zaposlenik add foreign key (nadredeni) references zaposlenik (sifra);
