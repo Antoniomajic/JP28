@@ -12,14 +12,16 @@ create table djelatnica(
 
 create table korisnik(
 	sifra int not null primary key auto_increment,
-	spol varchar(10) not null,
-	usluga int not null
+	ime varchar(50) not null,
+	prezime varchar(50) not null,
+	spol varchar(10) not null
 );
 
 create table usluga(
 	sifra int not null primary key auto_increment,
 	naziv varchar(50) not null,
-	cijena decimal(18,2)
+	cijena decimal(18,2),
+	trajanje int 
 );
 
 create table termin(
@@ -42,3 +44,24 @@ values
 (null,'Vanja','Radman',null),
 (null,'Mirjana','Obradović',null);
 
+insert into korisnik (sifra,ime,prezime,spol)
+values
+(null,'Julija','Gajić','Žensko'),
+(null,'Anita','Jakin','Žensko'),
+(null,'Izabela','Barišić','Žensko'),
+(null,'Petar','Križan','Muško'),
+(null,'Ivana','Terzić','Žensko');
+
+insert into usluga (sifra,naziv,cijena,trajanje)
+values
+(null,'Pedikura',10,20),
+(null,'Maska za lice',10,30),
+(null,'Umjetni nokti',20,60);
+
+insert into termin (sifra,datum,usluga,korisnik,djelatnica)
+values
+(null,'2023-05-17 08:00:00',1,1,1),
+(null,'2023-05-17 08:00:00',2,2,2),
+(null,'2023-05-17 08:00:00',3,3,3),
+(null,'2023-05-17 09:00:00',1,4,1),
+(null,'2023-05-17 09:00:00',3,5,2);
