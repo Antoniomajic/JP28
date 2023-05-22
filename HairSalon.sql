@@ -64,3 +64,6 @@ insert into appointment (id,date,service,customer,employee)
 		(null,'2023-05-10 10:00:00',1,4,3),
 		(null,'2023-05-10 10:00:00',3,5,2);
 
+update service set name='Male haircut' where id=1;
+update service set name='Female haircut' where id=2;
+update service set name='Hair wash' where id=3;
