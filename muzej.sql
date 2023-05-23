@@ -1,6 +1,8 @@
--- create database muzej;
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\BeautySalon.sql
 
--- use muzej;
+drop database if exists Museum;
+create database Museum;
+use Museum;
 
 create table kustos(
 	sifra int not null primary key auto_increment,
@@ -11,8 +13,7 @@ create table kustos(
 
 create table sponzor(
 	sifra int not null primary key auto_increment,
-	ime varchar(50) not null,
-	prezime varchar(50) not null
+	ime varchar(50) not null
 );
 
 create table djelo(
