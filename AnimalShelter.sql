@@ -1,48 +1,48 @@
 -- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\AnimalShelter.sql
 
-drop database if exists udrugazazastituzivotinja;
-create database udrugazazastituzivotinja;
-use udrugazazastituzivotinja;
+drop database if exists AnimalShelter;
+create database AnimalShelter;
+use AnimalShelter;
 
-create table osoba(
-	sifra int not null primary key auto_increment,
-	ime varchar(50) not null,
-	prezime varchar(50) not null,
-	oib char(11)
+create table Person(
+	id int not null primary key auto_increment,
+	firstname varchar(50) not null,
+	lastname varchar(50) not null,
+	ID_number char(11)
 );
 
-create table prostor(
-	sifra int not null primary key auto_increment,
-	broj char(3),
-	kvadratura int
+create table Cage(
+	id int not null primary key auto_increment,
+	number char(3),
+	dimension int
 );
 
-create table sticenik(
-	sifra int not null primary key auto_increment,
-	vrsta varchar(50) not null,
-	spol varchar(10) not null,
-	prostor int not null,
-	osoba int not null
+create table Animal(
+	id int not null primary key auto_increment,
+	animal_kind varchar(50) not null,
+	sex varchar(10) not null,
+	Cage int not null,
+	Person int not null
 );
 
 
-alter table sticenik add foreign key (osoba) references osoba (sifra);
-alter table sticenik add foreign key (prostor) references prostor (sifra);
+alter table Animal add foreign key (Person) references Person (id);
+alter table Animal add foreign key (Cage) references Cage (id);
 
-insert into osoba (sifra,ime,prezime,oib)
+insert into Person (id,firstname,lastname,ID_number)
 values
 (null,'Zvonko','Samardžija',null),
 (null,'Šime','Orsolić',null),
 (null,'Patricija','Buzov',null);
 
-insert into prostor (sifra,broj,kvadratura)
+insert into Cage (id,number,dimension)
 values 
 (null,'101',6),
 (null,'102',3),
 (null,'103',4),
 (null,'104',5);
 
-insert into sticenik (sifra,vrsta,spol,prostor,osoba)
+insert into animal (id,animal_kind,sex,Cage,Person)
 values
 (null,'pas','muško',1,1),
 (null,'pas','žensko',2,2),
