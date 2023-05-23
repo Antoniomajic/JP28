@@ -1,4 +1,4 @@
-# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\udrugazazastituzivotinja.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\AnimalShelter.sql
 
 drop database if exists udrugazazastituzivotinja;
 create database udrugazazastituzivotinja;
