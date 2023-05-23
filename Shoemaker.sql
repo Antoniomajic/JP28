@@ -1,43 +1,79 @@
-create database postolar;
-use postolar;
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Shoemaker.sql
+drop database if exists Shoemaker;
+create database Shoemaker;
+use Shoemaker;
 
-create table korisnik(
+create table customer(
 	id int not null primary key auto_increment,
-	ime varchar(50),
-	prezime varchar(50),
-	telefon varchar(20)
+	firstname varchar(50),
+	lastname varchar(50),
+	phone_number varchar(20)
 );
 
-create table obuca(
+create table shoe(
 	id int not null primary key auto_increment,
-	marka varchar(50),
-	broj char(2),
-	korisnik int
+	brand varchar(50),
+	number char(2),
+	customer int
 );
 
-create table popravak(
+create table service(
 	id int not null primary key auto_increment,
-	segrt int,
-	trajanje int,
-	cijena decimal(18,2),
-	opis varchar(100)
+	name varchar(50),
+	duration int,
+	price decimal(18,2),
+	descripction varchar(100)
 );
 
-create table popravak_obuca(
+create table shoe_service(
 	id int not null primary key auto_increment,
-	obuca int,
-	popravak int
+	shoe int,
+	apprentice int not null,
+	service int
 );
 
-create table segrt(
+create table apprentice(
 	id int not null primary key auto_increment,
-	ime varchar(50),
-	prezime varchar(50),
-	oib char(11)
+	firstandlastname varchar(50)
 );
 
-alter table obuca add foreign key (korisnik) references korisnik (id);
-alter table popravak add foreign key (segrt) references segrt (id);
-alter table popravak_obuca add foreign key (obuca) references obuca (id);
-alter table popravak_obuca add foreign key (popravak) references popravak (id);
+alter table shoe add foreign key (customer) references customer (id);
+alter table shoe_service add foreign key (apprentice) references apprentice (id);
+alter table shoe_service add foreign key (shoe) references shoe (id);
+alter table shoe_service add foreign key (service) references service (id);
+
+insert into customer (id,firstname,lastname,phone_number)
+	values 
+			(null,'Pavao','Krčelić','0978523654'),
+			(null,'Damir','Drajačić','0956358875'),
+			(null,'Danica','Vukasović','0974785123'),
+			(null,'Željka','Pretić','0912587415');
+
+insert into shoe (id,brand,number,customer)
+	values 
+			(null,'Nike','41',1),
+			(null,'Adidas','44',2),
+			(null,'Roberto','37',3),
+			(null,'Borovo','37',3),
+			(null,'Adidas','43',4);
+
+insert into apprentice (id,firstandlastname)
+	values
+			(null,'Mario Marić');
+
+
+insert into  service (id,name,duration,price,descripction)
+	values 
+			(null,'Jednostavni popravak',30,'10','Jednostavni popravak obuće'),
+			(null,'Složeni popravak',60,'20','Složeni popravak obuće'),
+			(null,'Komplicirani popravak',90,'35','Teži popravak obuće');
+
+insert into shoe_service (id,shoe,apprentice,service)
+	values 
+			(null,1,1,2),
+			(null,2,1,3),
+			(null,3,1,2),
+			(null,4,1,2);
+
+
 
