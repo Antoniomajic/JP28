@@ -1,34 +1,70 @@
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Doctor'sOffice.sql
 
-create database doktorskaordinacija;
-use doktorskaordinacija;
+drop database if exists DoctorsOffice;
+create database DoctorsOffice;
+use DoctorsOffice;
 
-create table pacijent(
-	sifra int not null primary key auto_increment,
-	ime varchar(50) not null,
-	prezime varchar(50) not null,
-	oib char(11)
-	);
-
-create table terapija(
-	sifra int not null primary key auto_increment,
-	naziv varchar(100),
-	opis varchar(300)
+create table person(
+	id int not null primary key auto_increment,
+	firstname varchar(50) not null,
+	lastname varchar(50) not null,
+	id_number char(11)
 );
 
-create table terapija_pacijenta(
-	sifra int not null primary key auto_increment,
-	pacijent int not null,
-	terapija int
+create table patient(
+	id int not null primary key auto_increment,
+	person int not null 
 );
 
-create table medicinska_sestra(
-	sifra int not null primary key auto_increment,
-	ime varchar(50) not null,
-	prezime varchar(50) not null,
-	oib char(11),
-	terapija int
+create table therapy(
+	id int not null primary key auto_increment,
+	name varchar(100),
+	description varchar(300)
 );
 
-alter table medicinska_sestra add foreign key (terapija) references terapija (sifra);
-alter table terapija_pacijenta add foreign key (pacijent) references pacijent (sifra);
-alter table terapija_pacijenta add foreign key (terapija) references terapija (sifra);
+create table nurse(
+	id int not null primary key auto_increment,
+	person int not null
+);
+
+create table patient_therapy(
+	id int not null primary key auto_increment,
+	patient int not null,
+	therapy int,
+	nurse int
+);
+
+alter table patient_therapy add foreign key (nurse) references nurse (id);
+alter table patient_therapy add foreign key (patient) references patient (id);
+alter table patient_therapy add foreign key (therapy) references therapy (id);
+alter table nurse add foreign key (person) references person(id); 
+alter table patient add foreign key (person) references person(id);
+
+insert into person (id,firstname,lastname,id_number)
+	values
+			(null,'Harvey','May','45718547859'),
+			(null,'Callum','Jackson','45781459687'),
+			(null,'Natasha','Brooks','32568741589'),
+			(null,'Grace','Hunt','12476985325');
+
+insert into patient (id,person)
+	values
+			(null,3),
+			(null,4);
+
+insert into nurse (id,person)
+	values 
+			(null,1),
+			(null,2);
+
+insert into therapy (id,name,description)
+	values 
+			(null,'GHE','General Health Exam'),
+			(null,'GPT','High pressure treatment');
+
+insert into patient_therapy (id,patient,therapy,nurse)
+	values 
+			(null,1,2,1),
+			(null,2,1,2);
+
+update person set lastname='Hunter' where id=4;
