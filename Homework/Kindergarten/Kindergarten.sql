@@ -1,4 +1,4 @@
--- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Kindergarten.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\Kindergarten\Kindergarten.sql
 
 drop database if exists Kindergarten;
 create database Kindergarten;

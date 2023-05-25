@@ -1,4 +1,4 @@
--- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Shoemaker.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\Shoemaker\Shoemaker.sql
 drop database if exists Shoemaker;
 create database Shoemaker;
 use Shoemaker;

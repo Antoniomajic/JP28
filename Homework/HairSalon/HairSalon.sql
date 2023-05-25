@@ -1,4 +1,4 @@
-# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\HairSalon.sql
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\HairSalon\HairSalon.sql
 
 drop database if exists HairSalon;
 create database HairSalon;

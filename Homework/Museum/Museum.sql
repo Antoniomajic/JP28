@@ -1,4 +1,4 @@
-# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Museum.sql
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\Museum\Museum.sql
 
 drop database if exists Museum;
 create database Museum;

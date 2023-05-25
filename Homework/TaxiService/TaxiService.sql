@@ -1,4 +1,4 @@
--- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\TaxiService.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\TaxiService\TaxiService.sql
 
 drop database if exists TaxiService;
 create database TaxiService;

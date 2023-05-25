@@ -1,4 +1,4 @@
--- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Watchmaker.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\Watchmaker\Watchmaker.sql
 
 drop database if exists Watchmaker;
 create database Watchmaker;
