@@ -1,4 +1,4 @@
--- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\AnimalShelter.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\AnimalShelter\AnimalShelter.sql
 
 drop database if exists AnimalShelter;
 create database AnimalShelter;

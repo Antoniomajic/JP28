@@ -1,4 +1,4 @@
--- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Doctor'sOffice.sql
+-- c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\Homework\DoctorsOffice\Doctor'sOffice.sql
 
 drop database if exists DoctorsOffice;
 create database DoctorsOffice;
