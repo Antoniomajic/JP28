@@ -65,4 +65,36 @@ alter table visit add foreign key (employee) references employee(id);
 alter table service_visit add foreign key (visit) references visit(id);
 alter table service_visit add foreign key (service) references service(id);
 
+insert into child(id,name,parentname,surname,parent_phonenumber)
+	values
+			(null,'Marijan','Eduard','Bekavac','0975177844'),
+			(null,'Petra','Ivo','Šertić','0915554478'),
+			(null,'Lucijan','Vedran','Šušak','0984457185');
 
+insert into employee (id,name,id_number,surname,workplace)
+	values
+			(null,'Milica','44587412580','Pavlić','Arena'),
+			(null,'Josipa','32105021014','Ratković','Mala igraonica'),
+			(null,'Janko','66978520203','Drašković','Velika igraonica');		
+
+insert into visit (id,dateOfArrival,dateOfLeaving,mark,employee)
+	values
+			(null,'2023-05-25 09:00:00','2023-05-25 13:00:00','Early Play',1),
+			(null,'2023-05-25 14:00:00','2023-05-25 18:00:00','Birthday',2),
+			(null,'2023-05-26 18:00:00','2023-05-26 20:00:00','Bed time play',3);		
+
+insert into service (id,price,unitOfMeasure,amount,name)
+	values
+			(null,'20','hour',2,'A'),
+			(null,'40','hour',4,'B'),
+			(null,'20','hour',2,'C');
+
+insert into operator (id,email,name,password,id_number,surname)
+	values
+			(null,'ivana.ivosevic@gmail.com','Ivana','ivanicamala213','547852010025','Ivošević');
+
+update child set name='Mario' where id=1;
+update employee set workplace='Svaštara' where id=1;			
+update visit set dateOfLeaving='2023-05-26 19:00:00' where id=3;
+
+delete from child where id=1;
