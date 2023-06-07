@@ -1,4 +1,4 @@
---  c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\ColloquiumPractice\Practice2.sql
+--  c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\javaprogrameri\dz1\ColloquiumPractice\Practice2\Practice2.sql
 
 drop database if exists Practice2;
 create database Practice2;
