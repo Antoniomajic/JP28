@@ -138,5 +138,6 @@ inner join brother f			on f.enemy=e.id
 where d.secondTime is not null and c.cardigan like '%ba%'
 order by e.dress desc;
 
-select c.cardigan, c.asocial 
-from boy c inner join boy_fiance b on b.boy=c.id;
+select boy.cardigan, boy.asocial
+from boy 
+where id not in (select id from boy_fiance);
