@@ -161,4 +161,4 @@ ORDER BY e.pants;
 -- 6. SELECT COLUMN dress & marks FROM TABLE sister WHOSE PRIMARY KEY IS NOT IN TABLE sister_secondFatherInLaw
 SELECT sister.dress, sister.marks
 FROM sister
-WHERE id NOT IN 
+WHERE id NOT IN (SELECT id FROM sister_secondFatherInLaw);
