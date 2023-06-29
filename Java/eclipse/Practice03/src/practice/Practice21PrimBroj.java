@@ -9,7 +9,7 @@ public class Practice21PrimBroj {
 	// prim broj je cjeli broj djeljiv s jedan i sam sa sobom
 	
 	public static void main(String[] args) {
-		int broj=777798982;
+		int broj=11;
 		
 		// hipoteza
 		boolean prim=true;
@@ -23,6 +23,10 @@ public class Practice21PrimBroj {
 		System.out.println(broj + (prim ? " je" : " nije") + " prim broj");
 		
 		// nastavak doma: Ispisati sve prim brojeve između dva unesena broja
+		
+		
+		
+		
 	}
 	
 }
