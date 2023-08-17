@@ -44,7 +44,7 @@ public class E01Metode {
 			for(int i=1;i<=100;i++) {
 				s+=i;
 			}
-			return 0;
+			return s;
 			
 		}
 	
