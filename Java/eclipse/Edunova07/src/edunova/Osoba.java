@@ -15,6 +15,24 @@ public class Osoba {
 	private String ime;
 	private String prezime;
 	private int godine;
+	
+	
+	// konstruktor je posebna metoda koja se poziva ključnom rječju new
+	// Naziv konstruktora mora biti istovjetan nazivu klase
+	// prazan konstruktor
+	
+	public Osoba() {
+		System.out.println("Nalazim se u Osoba konstruktor");
+	}
+	
+	// puni konstruktor 
+	public Osoba(String ime, String prezime, int godine) {
+		//super(); vezano za nasljeđivanje - kasnije
+		this.ime = ime;
+		this.prezime = prezime;
+		this.godine = godine;
+	}
+	
 
 	/*
 	 * public String getIme() { 
@@ -29,6 +47,8 @@ public class Osoba {
 	public String getIme() {
 		return ime;
 	}
+
+	
 
 	public void setIme(String ime) {
 		this.ime = ime;
